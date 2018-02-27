@@ -14,9 +14,10 @@ public class EnemySpawner : NetworkBehaviour
     public override void OnStartServer()
     {
         switch(spawner){
-            case SpawnType.Minions:
+            case SpawnType.Minions: SpawnMinions();
                 break;
-            case SpawnType.Boss: StartCoroutine(SpawnBoss(5f));
+            case SpawnType.Boss: SpawnTheBoss();
+                //StartCoroutine(SpawnBoss(5f));
                 break;
         }
     }
@@ -26,17 +27,18 @@ public class EnemySpawner : NetworkBehaviour
         {
             var spawnPosition = new Vector3(
                 Random.Range(-8.0f, 8.0f),
-                0.0f,
-                Random.Range(-8.0f, 8.0f));
+                Random.Range(-8.0f, 8.0f), transform.position.z
+                );
 
-            var spawnRotation = Quaternion.Euler(
-                0.0f,
-                Random.Range(0, 180),
-                0.0f);
-
-            var enemy = (GameObject)Instantiate(enemyPrefab, spawnPosition, spawnRotation);
+            var enemy = (GameObject)Instantiate(enemyPrefab, spawnPosition, transform.rotation);
             NetworkServer.Spawn(enemy);
         }
+    }
+
+    void SpawnTheBoss(){
+        Debug.Log("Spawn Boss!");
+        GameObject boss = Instantiate(enemyPrefab, transform.position, transform.rotation);
+        NetworkServer.Spawn(boss);
     }
 
     IEnumerator SpawnBoss(float spawnWaitTime){

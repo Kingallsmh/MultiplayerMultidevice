@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1612595898445748, guid: 051d7121d61b94bdd9c493c92d745f28,
     type: 2}
-  numberOfEnemies: 1
+  numberOfEnemies: 2
   spawner: 1
 --- !u!1 &1604100611
 GameObject:
@@ -411,6 +411,7 @@ MonoBehaviour:
   - {fileID: 1341813684464134, guid: 709ddb802e08a43a6b0f017528f20633, type: 2}
   - {fileID: 1612595898445748, guid: 051d7121d61b94bdd9c493c92d745f28, type: 2}
   - {fileID: 1722032963987450, guid: 4544a3f8a85b74004be122a2d3aa29b8, type: 2}
+  - {fileID: 1474587727468078, guid: c453c66b348b541b1bf878268d16d0d3, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:

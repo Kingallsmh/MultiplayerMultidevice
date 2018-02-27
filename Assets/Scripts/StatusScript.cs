@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class StatusScript : MonoBehaviour {
+public class StatusScript : NetworkBehaviour {
 
     public bool canBeHit = true;
     public float invincibleWait = 2f;

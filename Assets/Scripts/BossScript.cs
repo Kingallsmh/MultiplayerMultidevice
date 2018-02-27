@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class BossScript : MonoBehaviour {
+public class BossScript : NetworkBehaviour {
 
     public GameObject bossBall;
     public Transform spawnPoint;
